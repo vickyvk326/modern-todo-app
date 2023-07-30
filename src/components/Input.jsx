@@ -6,7 +6,10 @@ const Input = () => {
   const { todos, setTodos } = useContext(TodoContext);
   const [newTaskName, setnewTaskName] = useState("");
   const addTodo = (newTaskName) => {
-    setTodos([...todos, { task: newTaskName, isDone: false }]);
+    setTodos([
+      ...todos,
+      { task: newTaskName, isDone: false, isEditing: false },
+    ]);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
